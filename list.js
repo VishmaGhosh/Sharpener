@@ -14,16 +14,20 @@ function onSubmit(e) {
         setTimeout(() => msg.remove(), 3000);
     }
     else {
-        const li = document.createElement('li');
-        li.appendChild(document.createTextNode(
-            `Name: ${name.value} |  Email: ${email.value}`
-        ))
+        
         let newUser = {
             name: name.value,
             email: email.value
         }
-        localStorage.setItem(`user${localStorage.length}`, JSON.stringify(newUser));
+        localStorage.setItem('user', JSON.stringify(newUser));
 
+        const li = document.createElement('li');
+        let user = JSON.parse(localStorage.getItem('user'));
+        console.log(user.name);
+        li.appendChild(document.createTextNode(
+            `Name: ${user.name} |  Email: ${user.email}`
+        ))
+        
         list.appendChild(li);
 
         // clear field
