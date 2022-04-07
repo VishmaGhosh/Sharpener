@@ -11,7 +11,7 @@ function showUser() {
   list.innerHTML = "";
   axios
     .get(
-      "https://crudcrud.com/api/1f66196bc888488cacb3c8318ecacada/appoinmentData"
+      "https://crudcrud.com/api/2728b497518a4e37aad561a48f0318be/appoinmentData"
     )
     .then((res) => {
       console.log(res.data);
@@ -38,7 +38,7 @@ function onSubmit(e) {
     };
     axios({
       method: "post",
-      url: "https://crudcrud.com/api/1f66196bc888488cacb3c8318ecacada/appoinmentData",
+      url: "https://crudcrud.com/api/2728b497518a4e37aad561a48f0318be/appoinmentData",
       data: newUser,
     })
       .then((res) => showUser())
@@ -52,23 +52,33 @@ function onSubmit(e) {
 
 function removeItem(e) {
   if (e.target.classList.contains("delete")) {
-    var li = e.target.parentElement;
-    var x = li.id;
+    let li = e.target.parentElement;
+    let x = li.id;
     console.log(x);
-    axios.delete(`https://crudcrud.com/api/1f66196bc888488cacb3c8318ecacada/appoinmentData/${x}`)
-    .then(res => showUser())
-    .catch(err => console.log(err))
-    
+    axios
+      .delete(
+        `https://crudcrud.com/api/2728b497518a4e37aad561a48f0318be/appoinmentData/${x}`
+      )
+      .then((res) => showUser())
+      .catch((err) => console.log(err));
   }
 
   if (e.target.classList.contains("edit")) {
     var li = e.target.parentElement;
-    console.log(li);
+    let x = li.id;
+    // console.log(li);
     var uName = li.childNodes[0].textContent;
     var uEmail = li.childNodes[2].textContent;
     // console.log(uName, uEmail);
+    axios
+      .delete(
+        `https://crudcrud.com/api/2728b497518a4e37aad561a48f0318be/appoinmentData/${x}`
+      )
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+    
     name.value = uName;
     email.value = uEmail;
-    list.removeChild(li);
   }
 }
+
