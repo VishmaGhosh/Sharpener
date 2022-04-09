@@ -53,7 +53,29 @@ class BST{
       };
  };
 
+//  function findMin(root){
+//     if(root === null)
+//       return -1;
+//       while(root.left !== null){
+//          root = root.left;
+//       }
+//       return root.data;
+//  }
+function findMin(root){
+   if(root === null)
+     return -1;
+     if(root.left == null) return root.data;
+     return findMin(root.left);
+}
 
+ function findMax(root){
+    if(root === null){
+       return -1;
+    }
+    if(root.right === null) return root.data;
+
+    return findMax(root.right);
+ }
 
 
 
@@ -61,5 +83,9 @@ var tree = new BST();
 tree.insert(5);
 tree.insert(20);
 tree.insert(7);
-// console.log(tree);
-console.log(tree.find(20));
+tree.insert(3);
+console.log(tree);
+// console.log(tree.find(20));
+
+console.log(findMin(tree.root));
+console.log(findMax(tree.root));
