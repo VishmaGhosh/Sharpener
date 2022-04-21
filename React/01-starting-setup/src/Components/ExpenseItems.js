@@ -1,15 +1,16 @@
 import React from 'react'
-import './ExpenseItems.css'
+import ExpenseDate from './ExpenseDate'
+import ExpenseDetails from './ExpenseDetails'
 
-function ExpenseItems(data) {
+
+function ExpenseItems(props) {
+    
     return (
         <div className='expense-item'>
-            <div>{data.date.toISOString()}</div>
-            <div>{data.location}</div>
-            <div className='expense-item__description'>
-                <h2>{data.title}</h2>
-                <div className='expense-item__price'>{data.amount}</div>
+            <div>
+                <ExpenseDate date={props.date} />
             </div>
+        <ExpenseDetails title={props.title} amount={props.amount} />
         </div>
     )
 }
