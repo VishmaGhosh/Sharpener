@@ -30,10 +30,11 @@ const  App = () => {
 
   const addExpenseHandler = (expense) => {
     console.log("In App.Js");
-    setExpenses([...expenses,expense])
-    console.log(expenses);
-  }
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    })
 
+  }
   return (
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />

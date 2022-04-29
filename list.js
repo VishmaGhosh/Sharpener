@@ -15,7 +15,7 @@ function showUser() {
     )
     .then((res) => {
       console.log(res.data);
-      res.data.map((user, key) => {
+      res.data.map((expense, key) => {
         const li = `<li id=${user._id}><span>${user.name}</span> => <span>${user.email}</span>
     <button class="btn btn-danger btn-sm m-1 delete">delete</button>
     <button class="btn btn-warning btn-sm m-1 edit">edit</button></li>`;

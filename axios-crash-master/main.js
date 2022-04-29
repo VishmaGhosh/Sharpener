@@ -33,7 +33,7 @@ function addTodo() {
 
   axios.post('https://jsonplaceholder.typicode.com/todos', {
     title: "New todos",
-    completeg: false
+    completed: false
   })
     .then(res => showOutput(res))
     .catch(err => console.log(err))
