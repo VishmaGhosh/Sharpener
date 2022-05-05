@@ -1,0 +1,17 @@
+.header {
+    width: 100%;
+    height: 200px;
+    background: yellow;
+    justify-content: space-between;
+    display: flex;
+}
+
+.header_text {
+    width: 100%;
+    color: white;
+    background-color: brown;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 10%;
+}
