@@ -13,7 +13,7 @@ function App() {
   
    return (
     <Fragment>
-      {shownCart && <Cart />}
+      {shownCart && <Cart onClose={shownCartHandler} />}
       <Header onShownCart={shownCartHandler} />
       <main>
         <Meals />
