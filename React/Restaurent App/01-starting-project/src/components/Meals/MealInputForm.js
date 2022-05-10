@@ -6,7 +6,7 @@ const MealInputForm = (props) => {
   const cartCtx = useContext(cartContext);
 
   const onClickHandler =(e) => {
-    const quantity = document.getElementById(props.meal.id).value
+    const quantity = Number(document.getElementById(props.meal.id).value);
     e.preventDefault();
     cartCtx.addItem({...props.meal, quantity: quantity});
     // console.log(cartCtx);

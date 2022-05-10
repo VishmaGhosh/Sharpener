@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 import cartContext from './cart-context'
 
 const CartProvider = (props) => {
@@ -8,15 +8,15 @@ const CartProvider = (props) => {
 
     const addItemToCartHandler = (item) => {
         setItems([...items, item])
-        setTotalAmount(totalAmount+item.quantity*item.price);
+        setTotalAmount(totalAmount + item.quantity * item.price);
         cartContextList.items.push(item);
         // cartContextList.totalAmount = 20;
     }
 
     const removeItemFromCartHandler = (id) => {
         setItems(items.map((item) => {
-            if(item.id === id){
-                if(item.quantity >0)
+            if (item.id === id) {
+                if (item.quantity > 0)
                     item.quantity = item.quantity - 1;
             }
             return item;
@@ -24,7 +24,7 @@ const CartProvider = (props) => {
         setTotalAmount(items.reduce((acc, item) => {
             return acc += item.quantity * item.price;
         }, 0))
-        
+
     }
 
     const cartContextList = {

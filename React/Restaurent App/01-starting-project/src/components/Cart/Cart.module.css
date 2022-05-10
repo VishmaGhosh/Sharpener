@@ -4,6 +4,22 @@
   padding: 0;
   max-height: 20rem;
   overflow: auto;
+  
+}
+
+.cart-items li  span{
+  padding: 10px;
+}
+
+.cart-items li button{
+  font-size: 20px;
+  width: 50px;
+  margin-left: 10px;
+  background-color: #8a2b06;
+  border-radius: 5px;
+  border: 1px solid black;
+  color: white;
+
 }
 
 .total {
