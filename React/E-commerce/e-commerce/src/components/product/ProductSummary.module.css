@@ -1,0 +1,13 @@
+.summary{
+    height: 200px;
+    background-color: rgb(78, 87, 87);
+    margin-top: 50px;
+    text-align: center;
+    justify-content: center;
+    color: aliceblue;
+}
+
+.summary h1{
+    font-size: 5rem;
+    margin-top: 0;
+}

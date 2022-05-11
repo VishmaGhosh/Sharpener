@@ -1,0 +1,5 @@
+.products{
+    display: flex;
+    columns: 2;
+    justify-content: space-evenly;
+}

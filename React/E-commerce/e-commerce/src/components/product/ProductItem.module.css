@@ -1,0 +1,13 @@
+.items{
+    text-align: center;
+}
+
+.itemFooter{
+    display: flex;
+    justify-content: space-between;
+}
+
+.itemFooter button{
+    height: 2rem;
+    justify-content: space-around;
+}
