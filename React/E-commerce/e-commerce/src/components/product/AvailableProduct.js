@@ -22,7 +22,7 @@ const productsArr = [
         title: 'Blue Color',
         price: 100,
         imageUrl: 'https://prasadyash2411.github.io/ecom-website/img/Album%204.png',
-    }
+    },
 ]
 const AvailableProduct = () => {
     const productList = productsArr.map((item, id) => <ProductItem key={id} item={item} />)

@@ -1,0 +1,22 @@
+.footer{
+  display: flex;
+  height: 5rem;
+  background-color: rgb(87, 82, 82);
+  color: aliceblue;
+  justify-content: space-around;
+}
+
+.footer div{
+    display: flex;
+    justify-content:space-between;
+    width: 150px;
+    margin-top: 2rem;
+}
+
+.footer div button{
+    background-color: black;
+    color: white;
+    height: 2rem;
+    border-radius: 8px;
+    cursor: pointer;
+}

@@ -1,9 +1,9 @@
 import React from 'react'
 import classes from './HeaderCartButton.module.css'
 
-const HeaderCartButton = () => {
+const HeaderCartButton = (props) => {
   return (
-    <button className={classes.button}>Cart</button>
+    <button className={classes.button} onClick={props.showCart}>Cart</button>
   )
 }
 
