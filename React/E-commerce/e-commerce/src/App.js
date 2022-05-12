@@ -8,6 +8,7 @@ import Cart from './components/cart/Cart';
 import About from './components/layout/About'
 import CartContextProvider from './store/CartContextProvider';
 import ProductSummary from './components/product/ProductSummary';
+import Home from './components/home/Home';
 
 function App() {
   const [showCart, setShowCart] = useState(false)
@@ -22,8 +23,13 @@ function App() {
         <Route path="/about" exact>
           <About />
         </Route>
-        { showCart && <Cart showCart={showCartHandler} /> }
-        <Products />
+        {showCart && <Cart showCart={showCartHandler} />}
+        <Route path="/" exact>
+          <Products />
+        </Route>
+        <Route path="/home" exact>
+          <Home />
+        </Route>
       </main>
       <Footer />
     </CartContextProvider>

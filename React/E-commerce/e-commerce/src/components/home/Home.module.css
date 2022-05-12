@@ -1,0 +1,15 @@
+.home{
+    height: 5rem;
+    background-color: darkgray;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.home button{
+    margin-top: 20px;
+    width: 20rem;
+    background-color: black;
+    color: white;
+    font-size: larger;
+}
