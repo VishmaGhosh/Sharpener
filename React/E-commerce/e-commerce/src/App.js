@@ -9,27 +9,38 @@ import About from './components/layout/About'
 import CartContextProvider from './store/CartContextProvider';
 import ProductSummary from './components/product/ProductSummary';
 import Home from './components/home/Home';
+import Contactus from './components/layout/Contactus';
+import { Switch } from 'react-router-dom';
+import ProductDetails from './components/product/ProductDetails';
 
 function App() {
   const [showCart, setShowCart] = useState(false)
   const showCartHandler = () => {
     setShowCart(!showCart);
-  } 
+  }
   return (
     <CartContextProvider>
-      <Header showCart={ showCartHandler} />
+      <Header showCart={showCartHandler} />
       <main>
-        <ProductSummary />
-        <Route path="/about" exact>
-          <About />
-        </Route>
-        {showCart && <Cart showCart={showCartHandler} />}
-        <Route path="/" exact>
-          <Products />
-        </Route>
-        <Route path="/home" exact>
-          <Home />
-        </Route>
+        {/* <Switch> */}
+          <ProductSummary />
+          <Route path="/about" exact>
+            <About />
+          </Route>
+          {showCart && <Cart showCart={showCartHandler} />}
+          <Route path="/" exact>
+            <Products />
+          </Route>
+          <Route path="/home" exact>
+            <Home />
+          </Route>
+          <Route path="/contactus" exact>
+            <Contactus />
+          </Route>
+          <Route path="/product/:productId/" exact>
+            <ProductDetails />
+          </Route>
+        {/* </Switch> */}
       </main>
       <Footer />
     </CartContextProvider>

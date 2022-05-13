@@ -1,0 +1,39 @@
+.product{
+    display: flex;
+    padding: 5px;
+    text-align: justify;
+    justify-content: space-evenly;
+}
+
+.product button{
+    width: 100px;
+    height: 30px;
+    background-color: chocolate;
+    border-radius: 8px;
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.images{
+    /* display:flex; */
+    width: 300px;
+    position:relative;
+    justify-content: space-between;
+}
+
+
+
+.details{
+    /* display: flex; */
+    width: 100%;
+    justify-content: space-around;
+}
+
+.product div{ 
+    margin-left: 50px;
+} 
+
+.review{
+    text-align: center;
+    justify-content: space-between;
+}
