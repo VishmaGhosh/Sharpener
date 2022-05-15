@@ -10,6 +10,7 @@ const Header = (props) => {
         <NavLink activeClassName={classes.active} to='/'>Store</NavLink>
         <NavLink activeClassName={classes.active} to='/about'>About</NavLink>
         <NavLink activeClassName={classes.active} to='/contactus'>Contact us</NavLink>
+        <NavLink activeClassName={classes.active} to='/auth'>Login</NavLink>
         <HeaderCartButton showCart={props.showCart} />
       </header>
     </Fragment>

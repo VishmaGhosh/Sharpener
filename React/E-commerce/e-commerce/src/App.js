@@ -12,6 +12,7 @@ import Home from './components/home/Home';
 import Contactus from './components/layout/Contactus';
 import { Switch } from 'react-router-dom';
 import ProductDetails from './components/product/ProductDetails';
+import Login from './components/auth/Login';
 
 function App() {
   const [showCart, setShowCart] = useState(false)
@@ -39,7 +40,10 @@ function App() {
           </Route>
           <Route path="/product/:productId/" exact>
             <ProductDetails />
-          </Route>
+        </Route>
+        <Route path="/auth" exact>
+          <Login />
+        </Route>
         {/* </Switch> */}
       </main>
       <Footer />
