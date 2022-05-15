@@ -42,8 +42,8 @@ const Login = () => {
                     })
                 }
             }).then(data => {
-                // console.log(data);
-                authCtx.login(data.idToken);
+                // console.log(data.email);
+                authCtx.login(data.idToken,data.email);
                 history.replace('/');
             }).catch(err => {
                 alert(err.message)
