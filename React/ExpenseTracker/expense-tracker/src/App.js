@@ -6,6 +6,7 @@ import { Route, Switch } from 'react-router-dom';
 import Home from './components/pages/Home';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
+import UpdateProfile from './components/pages/UpdateProfile';
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path='/signup'>
             <Signup />
+          </Route>
+          <Route path='/updateuser'>
+            <UpdateProfile />
           </Route>
         </Switch>
       </main>

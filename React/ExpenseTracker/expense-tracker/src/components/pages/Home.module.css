@@ -1,0 +1,10 @@
+.home{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home button{
+    height: 30px;
+    cursor: pointer;
+}
