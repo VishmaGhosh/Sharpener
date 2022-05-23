@@ -1,12 +1,31 @@
-import React,{useRef, useContext} from 'react'
+import React,{useRef, useContext, useEffect} from 'react'
 import authContext from '../../store/auth-context';
 import classes from './UpdateProfile.module.css'
 
 const UpdateProfile = () => {
     const authCtx = useContext(authContext);
-    console.log(authCtx);
     const userNameRef = useRef();
     const photoUrlRef = useRef();
+
+    useEffect(() => {
+        fetch('https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=AIzaSyBfYZu61DWKwje2272Eom3nTMqkXkTLucg', {
+            method: 'POST',
+            body: JSON.stringify({
+                idToken: authCtx.token,
+            }),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(res => {
+                return res.json();
+            })
+            .then(data => {
+                userNameRef.current.value = data.users[0].displayName
+                photoUrlRef.current.value = data.users[0].photoUrl
+            })
+        .catch(err => console.log(err))
+    }, [])
 
     const submitHandler = (e) => {
         e.preventDefault();
