@@ -1,11 +1,11 @@
 import React, { useRef, useContext } from 'react'
 import authContext from '../../store/auth-context';
-// import { useHistory } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const authCtx = useContext(authContext);
-    // const history = useHistory();
+    const history = useHistory();
 
     const loginHandler = (e) => {
         e.preventDefault();
@@ -36,7 +36,7 @@ const Login = () => {
             }).then(data => {
                 // console.log(data);
                 authCtx.login(data.idToken);
-                // history.replace('/home');
+                history.replace('/');
             }).catch(err => {
                 alert(err.message)
             })
@@ -50,7 +50,7 @@ const Login = () => {
                 <input type='email' ref={emailRef} /><br />
                 <label>Password</label><br />
                 <input type='password' ref={passwordRef} /><br />
-                <button type='submit'>Signup</button>
+                <button type='submit'>Login</button>
             </form>
         </div>
     )
