@@ -19,7 +19,7 @@ const Header = (props) => {
                 <NavLink  to='/'>Home</NavLink>
                 <NavLink to='/login'>Login</NavLink>
                 <NavLink to='/signup'>Signup</NavLink>
-                <button onClick={logoutHandler}>Logout</button>
+                {authCtx.isLoggedIn && <button onClick={logoutHandler}>Logout</button>}
             </header>
         </Fragment>
     )
