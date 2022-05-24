@@ -19,3 +19,16 @@
     cursor: pointer;
     text-decoration: none;
 }
+
+.header button{
+  width: 5rem;
+  height: 2rem;
+  background-color: rgb(76, 166, 207);
+  border: 0px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.header button:hover{
+  background-color:rgb(23, 137, 141) ;
+}
