@@ -1,6 +1,8 @@
 import React, { useRef, useContext } from 'react'
 import authContext from '../../store/auth-context';
-import { useHistory } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
+import classes from './Login.module.css'
+
 const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -43,7 +45,7 @@ const Login = () => {
 
     }
     return (
-        <div>
+        <div className={classes.form}>
             <h1>Login</h1>
             <form onSubmit={loginHandler}>
                 <label>Email</label><br />
@@ -52,6 +54,7 @@ const Login = () => {
                 <input type='password' ref={passwordRef} /><br />
                 <button type='submit'>Login</button>
             </form>
+            <NavLink to='/forgotpassword'>Forgot Password ? </NavLink>
         </div>
     )
 }
