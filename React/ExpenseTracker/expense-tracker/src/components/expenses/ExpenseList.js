@@ -6,7 +6,7 @@ const ExpenseList = (props) => {
       <ul>
           {
               props.expenses.map((item) => 
-                  <ExpenseItem key={item[0]} item={item[1]} />
+                  <ExpenseItem key={item[0]} item={item} onFetchExpense={props.onFetchExpense} />
               )
           }
     </ul>

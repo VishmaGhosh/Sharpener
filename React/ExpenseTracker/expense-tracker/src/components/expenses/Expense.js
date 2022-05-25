@@ -34,13 +34,13 @@ const Expense = () => {
                 fetchExpenses();
             })
             .catch(err => {
-            console.log(err);
-        })
+                console.log(err);
+            })
     }
     return (
         <div>
             <ExpenseInput onAddExpense={addExpenseHandler} />
-            <ExpenseList expenses={expenses} />
+            <ExpenseList expenses={expenses} onFetchExpense={fetchExpenses} />
         </div>
     )
 }

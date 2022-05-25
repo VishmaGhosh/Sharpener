@@ -6,6 +6,7 @@ const ExpenseInput = (props) => {
     const descRef = useRef();
     const typeRef = useRef();
 
+
     const formSubmitHandler = (e) => {
         e.preventDefault();
         const newExpense = {
@@ -19,10 +20,10 @@ const ExpenseInput = (props) => {
   return (
       <form onSubmit={formSubmitHandler} className={classes.expense_input} >
           <div>
-              <label>Amount</label>
-              <input type="number" ref={amountRef} />
               <label>Description</label>
               <input type="text" ref={descRef} />
+              <label>Amount</label>
+              <input type="number" ref={amountRef} />
               <label>Type</label>
               <select name="cars" id="cars" ref={typeRef}>
                   <option value="petrol">Petrol</option>
