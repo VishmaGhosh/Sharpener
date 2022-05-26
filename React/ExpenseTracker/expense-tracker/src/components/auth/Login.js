@@ -1,13 +1,17 @@
-import React, { useRef, useContext } from 'react'
-import authContext from '../../store/auth-context';
+import React, { useRef } from 'react'
+// import authContext from '../../store/auth-context';
 import { NavLink, useHistory } from "react-router-dom";
 import classes from './Login.module.css'
+import { useDispatch } from 'react-redux';
+import { authActions } from '../../store/auth';
 
 const Login = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
-    const authCtx = useContext(authContext);
+    // const authCtx = useContext(authContext);
     const history = useHistory();
+
+    const dispatch = useDispatch();
 
     const loginHandler = (e) => {
         e.preventDefault();
@@ -37,7 +41,8 @@ const Login = () => {
                 }
             }).then(data => {
                 // console.log(data);
-                authCtx.login(data.idToken);
+                // authCtx.login(data.idToken);
+                dispatch(authActions.login(data.idToken));
                 history.replace('/');
             }).catch(err => {
                 alert(err.message)

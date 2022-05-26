@@ -7,6 +7,7 @@ import Home from './components/pages/Home';
 import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import UpdateProfile from './components/pages/UpdateProfile';
+import ForgotPassword from './components/auth/ForgotPassword';
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route path='/updateuser'>
             <UpdateProfile />
+          </Route>
+          <Route path='/forgotpassword'>
+            <ForgotPassword />
           </Route>
         </Switch>
       </main>
