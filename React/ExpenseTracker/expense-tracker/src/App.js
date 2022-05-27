@@ -8,12 +8,14 @@ import Login from './components/auth/Login';
 import Signup from './components/auth/Signup';
 import UpdateProfile from './components/pages/UpdateProfile';
 import ForgotPassword from './components/auth/ForgotPassword';
+import { useSelector } from 'react-redux';
 
 function App() {
+  const dark = useSelector(state => state.theme.dark);
   return (
     <AuthContextProvider>
       <Header />
-      <main>
+      <main className={dark ? 'dark' : 'light'}>
         <Switch>
           <Route path='/' exact>
             <Home />
