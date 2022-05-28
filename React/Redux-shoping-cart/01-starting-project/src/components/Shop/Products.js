@@ -7,7 +7,6 @@ const Products = (props) => {
     title: 'Test',
     price: 6,
     desc: 'This is a first product - amazing!',
-    quantity: 2
   }
   return (
     <section className={classes.products}>
