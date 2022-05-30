@@ -1,15 +1,16 @@
 import { render, screen } from '@testing-library/react';
 import ExpenseList from './ExpenseList'
 
-test('renders Hello World as a text', () => {
-    //Arrange
-    render(<ExpenseList />)
+describe('Expense List', () => {
+    test('renders Hello World as a text', () => {
+        //Arrange
+        render(<ExpenseList />)
+        //Act
+        // ...Nothing
 
-    //Act
-    // ...Nothing
+        // Assert
+        const downloadElement = screen.getByRole('button').innerHTML;
+        expect(downloadElement).toBeInTheDocument()
 
-    // Assert
-    const downloadElement = screen.getByText('Download Expenses');
-    expect(downloadElement).toBeInTheDocument()
-
-});
+    });
+})
