@@ -3,8 +3,9 @@ import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 import { useSelector, useDispatch } from 'react-redux';
-import { cartActions, sendCartData } from './store/cart';
+import { cartActions, fethCartData, sendCartData } from './store/cart-actions';
 import Notification from './components/UI/Notification';
+
 
 let isInitial = true;
 
@@ -15,15 +16,11 @@ function App() {
   const dispatch = useDispatch()
 
   useEffect(() => {
+    dispatch(fethCartData());
+  }, [dispatch])
+  
+  useEffect(() => {
     if (isInitial) {
-      fetch('https://react-http-b4518-default-rtdb.firebaseio.com/cart.json')
-        .then(res => {
-          return res.json();
-        })
-        .then(resData => {
-          console.log(resData);
-          dispatch(cartActions.replaceCart({items: resData.cartItems, totalQuantity: resData.totalQuantity, totalAmount: resData.totalAmount}))
-      })
       isInitial = false;
       return;
     }
