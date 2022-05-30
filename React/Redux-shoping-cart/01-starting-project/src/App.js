@@ -1,9 +1,9 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect } from 'react';
 import Cart from './components/Cart/Cart';
 import Layout from './components/Layout/Layout';
 import Products from './components/Shop/Products';
 import { useSelector, useDispatch } from 'react-redux';
-import { cartActions, fethCartData, sendCartData } from './store/cart-actions';
+import { fethCartData, sendCartData } from './store/cart-actions';
 import Notification from './components/UI/Notification';
 
 
@@ -24,7 +24,11 @@ function App() {
       isInitial = false;
       return;
     }
-    dispatch(sendCartData(cart))
+
+    if (cart.changed) {
+      dispatch(sendCartData(cart))  
+    }
+    
   }, [cart, dispatch])
   return (
     <Fragment>

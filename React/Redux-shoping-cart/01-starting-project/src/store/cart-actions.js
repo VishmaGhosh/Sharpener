@@ -60,7 +60,10 @@ export const fethCartData = () => {
 
         try {
             const cartItems = await fetData();
-            dispatch(cartActions.replaceCart(cartItems))
+            dispatch(cartActions.replaceCart({
+                cartItems: cartItems.cartItems || [],
+                totalQuantity: cartItems.totalQuantity
+            }))
             dispatch(uiActions.showNotification({
                 status: 'Success',
                 title: 'Success!',

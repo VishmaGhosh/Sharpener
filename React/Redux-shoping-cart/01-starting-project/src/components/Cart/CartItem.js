@@ -5,7 +5,6 @@ import { cartActions } from '../../store/cart';
 const CartItem = (props) => {
   const dispatch= useDispatch()
   const { title, quantity, price } = props.item;
-  console.log(props.item);
   const addItemHandler = (e) => {
     e.preventDefault();
     dispatch(cartActions.addToCart(props.item))
@@ -21,7 +20,7 @@ const CartItem = (props) => {
         <h3>{title}</h3>
         <div className={classes.price}>
           ${quantity * price}{' '}
-          <span className={classes.itemprice}>{price}</span>
+          <span className={classes.itemprice}>({price}/item)</span>
         </div>
       </header>
       <div className={classes.details}>
