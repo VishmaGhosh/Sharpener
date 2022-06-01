@@ -1,0 +1,17 @@
+.summary{
+    margin-left: 25%;
+    margin-top: -10rem;
+    position: relative;
+    width: 600px;
+    text-align: center;
+    color: bisque;
+    background-color: rgb(68, 65, 65);
+    box-shadow: 0px 2px 8px rgba(0,0,0, 00.25);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.summary h1 {
+  font-size: 2rem;
+  margin-top: 0;
+}

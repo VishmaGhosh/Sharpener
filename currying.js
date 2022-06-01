@@ -1,3 +1,4 @@
+// currying using bind
 let multiply = function(a,b){
     console.log(a*b);
 }
@@ -7,6 +8,8 @@ multiplyByTwo(4);
 
 let multiplyByThree = multiply.bind(this,3);
 multiplyByThree(4);
+
+// Currying using closure
 
 let add = function(x){
    return function (y){

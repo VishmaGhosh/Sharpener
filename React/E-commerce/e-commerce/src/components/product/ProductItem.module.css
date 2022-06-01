@@ -1,0 +1,18 @@
+.items{
+    text-align: center;
+}
+
+.itemFooter{
+    display: flex;
+    justify-content: space-between;
+}
+
+.itemFooter button{
+    height: 2rem;
+    justify-content: space-around;
+    margin-top: 1rem;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
