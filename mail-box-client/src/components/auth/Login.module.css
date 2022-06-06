@@ -1,0 +1,44 @@
+.frm{
+    /* margin-top: 50px; */
+    text-align: center;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.frm form{
+    height: 15rem;
+    background-color: rgb(80, 75, 68);
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0px 1px 12px rgba(45, 50, 50, .30);
+    color: aliceblue;
+}
+
+.frm label{
+    font-size: larger;
+}
+
+.frm input{
+    width: 20rem;
+    height: 2rem;
+    border-radius: 8px;
+    border: 1px;
+    font-size: larger;
+}
+
+.frm input:focus{
+    background-color: rgb(121, 203, 206);
+}
+
+.frm button{
+    margin-top: 2rem;
+    width: 6rem;
+    height: 2.5rem;
+    border-radius: 8px;
+    border: 1px;
+    background-color: crimson;
+    box-shadow: 0px 1px 10px rgb(40, 50, 30);
+    cursor: pointer;
+}
+
+

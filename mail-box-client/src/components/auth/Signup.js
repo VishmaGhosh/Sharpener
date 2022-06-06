@@ -10,7 +10,7 @@ const Signup = () => {
         e.preventDefault();
 
         if (passwordRef.current.value === confirmPasswordRef.current.value) {
-           fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBfYZu61DWKwje2272Eom3nTMqkXkTLucg', {
+          await fetch('https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=AIzaSyBfYZu61DWKwje2272Eom3nTMqkXkTLucg', {
                 method: "POST",
                 body: JSON.stringify({
                     email: emailRef.current.value,
@@ -22,6 +22,7 @@ const Signup = () => {
                 }
            })
                .then(res => {
+                   console.log(res);
                    if (res.ok) {
                         console.log("User Successfully Signup");
                     }
