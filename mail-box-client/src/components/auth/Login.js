@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import { useRef } from 'react'
 import classes from './Login.module.css'
 import { useHistory } from "react-router-dom";
 import { useDispatch } from 'react-redux';
@@ -38,7 +38,8 @@ const Login = () => {
                     })
                 }
             }).then(data => {
-                dispatch(authActions.login(data.idToken));
+                console.log(data);
+                dispatch(authActions.login({token: data.idToken, email: data.email}));
                 history.replace('/');
             }).catch(err => {
                 alert(err.message)
@@ -48,10 +49,10 @@ const Login = () => {
 
   return (
      <div className={classes.frm}>
-          <h1>Signup</h1>
+          <h1>Login</h1>
           <form onSubmit={loginHandler}>
               <label>Email</label><br />
-              <input type="email" ref={emailRef} /><br />
+              <input type="email" ref={emailRef} id="EmailInput" /><br />
               <label>Password</label><br />
               <input type="password" ref={passwordRef} /><br />
               <button type="submit">Login</button>

@@ -1,0 +1,35 @@
+.main{
+    display: flex;
+    background-color: aquamarine;
+    height: 700px;
+}
+
+.menu{
+    width: 20%;
+    height: 90%;
+    margin: 2rem;
+    background-color: burlywood;
+}
+
+.menu li{
+    margin: 1rem;
+    cursor: pointer;
+}
+.menu li button{
+    width: 7rem;
+    height: 2rem;
+    background-color: blue;
+    color: aliceblue;
+    border: 1px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.menu li:active{
+    background-color: aqua;
+}
+
+.list{
+    margin-top: 2rem;
+    width: 90%;
+}
