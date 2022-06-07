@@ -3,10 +3,6 @@ import userEvent from '@testing-library/user-event'
 import Login from './Login'
 
 describe("Login", () => {
-    const initialState = { output: 10 };
-    const mockStore = configureStore();
-    let store;
-
 
     test("Render Login  text", () => {
         render(<Login />)
