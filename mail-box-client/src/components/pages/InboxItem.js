@@ -8,7 +8,7 @@ const InboxItem = (props) => {
       <li className={classes.list}>
         <div>
         <input type="checkbox" />
-        {!props.item.seen &&<span className={classes.dot}></span>}
+        {!props.item.seen &&<span id='spn1' className={classes.dot}></span>}
         <Link to={`/inbox/${props.item.id}`}><p>{props.item.sender}</p></Link>
         </div>
 

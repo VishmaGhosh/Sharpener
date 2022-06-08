@@ -20,7 +20,14 @@ const reciveEmailSlice = createSlice({
             tempEmail.seen = true;
             state.seenEmails++;
             state.changed = true
+        },
+        deleteEmail(state, action) {
+            const id = action.payload;
+            const newEmails = state.reciveEmails.filter(item => item.id !== id);
+            state.reciveEmails = newEmails;
+            state.seenEmails--;
         }
+
     }
 })
 

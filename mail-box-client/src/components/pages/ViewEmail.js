@@ -3,12 +3,13 @@ import { useSelector,useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import classes from './ViewEmail.module.css'
 import { reciveEmailAction } from '../../store/recive-email-slice'
+import { useHistory } from 'react-router-dom'
 
 
 const ViewEmail = (props) => {
     const dispatch = useDispatch()
-    
-    
+
+    const history = useHistory();
     const email = useSelector(state => state.auth.email);
     const params = useParams();
     const reciveEmails = useSelector(state => state.reciveEmail.reciveEmails);
@@ -16,16 +17,19 @@ const ViewEmail = (props) => {
     useEffect(() => {
         dispatch(reciveEmailAction.readEmail(params.eId))
     }, [])
-    if (!findMail) {
-        return <p>Not Found</p>
-    }
+
+    const deleteHandler = (e) => {
+        e.preventDefault();
+        dispatch(reciveEmailAction.deleteEmail(params.eId));
+        history.push("/inbox");
+    } 
 
   return (
       <div>
           <header className={classes.header}>
               <p>Back</p>
-              <p>Delete</p>
               <p>achive</p>
+              <button onClick={deleteHandler}>Delete</button>
           </header>
           <main className={classes.main}>
               <div><h2>{findMail.sub}</h2></div>
