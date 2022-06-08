@@ -1,0 +1,24 @@
+.header{
+    background-color: rgb(188, 223, 211);
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.main{
+    background-color: aliceblue;
+    padding: 2rem;
+    border: 1px solid blue;
+}
+
+.msg{
+    height: 15rem;
+}
+
+.footer{
+    display: flex;
+}
+
+.footer p{
+    color: blue;
+    margin-left: 1rem;
+}

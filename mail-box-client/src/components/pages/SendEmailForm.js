@@ -26,7 +26,8 @@ const SendEmailForm = () => {
             body: JSON.stringify({
                 sub: subRef.current.value,
                 text: textRef.current.value,
-                from: email
+                from: email,
+                seen:false
             }),
             headers: {
                 "Content-Type": "application/json"
