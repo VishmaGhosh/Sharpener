@@ -21,7 +21,7 @@ const ViewEmail = (props) => {
     const deleteHandler = (e) => {
         e.preventDefault();
         dispatch(reciveEmailAction.deleteEmail(params.eId));
-        history.push("/inbox");
+        history.push("/home");
     } 
 
   return (

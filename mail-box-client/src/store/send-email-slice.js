@@ -2,14 +2,15 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     sentEmails: [],
-    totalEmail: 0,
-    changed: false,
 }
 
 const sendEmailSlice = createSlice({
     name: "sendEmails",
     initialState,
     reducers: {
+        fetchSentEmail(state, action) {
+            state.sentEmails = action.payload;
+        },
         addTosentEmail(state, action) {
             state.sentEmails.push(action.payload);
             state.totalEmail++;

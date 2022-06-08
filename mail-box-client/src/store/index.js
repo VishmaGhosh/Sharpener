@@ -4,7 +4,7 @@ import sendEmailReducer from './send-email-slice'
 import reciveEmailReducer from './recive-email-slice';
 
 const store = configureStore({
-    reducer: { auth: authReducer, sendEmail: sendEmailReducer, reciveEmail: reciveEmailReducer}
+    reducer: { auth: authReducer, sentEmail: sendEmailReducer, reciveEmail: reciveEmailReducer}
 });
 
 

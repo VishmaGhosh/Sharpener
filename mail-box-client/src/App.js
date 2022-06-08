@@ -8,12 +8,16 @@ import Login from './components/auth/Login';
 import SendEmailForm from './components/pages/SendEmailForm';
 import { useSelector, useDispatch } from 'react-redux'
 import { reciveEmailAction } from './store/recive-email-slice';
-import Inbox from './components/pages/Inbox';
+import { sendEmailAction } from './store/send-email-slice';
+import Inbox from './components/pages/inbox/Inbox';
 import ViewEmail from './components/pages/ViewEmail';
+import SentBox from './components/pages/sentbox/SentBox';
+import ViewSentEmail from './components/pages/sentbox/ViewSentEmail';
 
 
 
 function App() {
+
   const dispatch = useDispatch();
   const reciveEmail = useSelector(state => state.reciveEmail);
 
@@ -34,6 +38,23 @@ function App() {
       .catch(err => {
       console.log(err)
     })
+  }, [dispatch])
+
+  useEffect(() => {
+    fetch('https://react-http-b4518-default-rtdb.firebaseio.com/vish26196gmailcom/sent.json')
+      .then(res => {
+        if (!res.ok) {
+          alert("Fetch data failed");
+        }
+        return res.json()
+      })
+      .then(data => {
+        console.log(data);
+        dispatch(sendEmailAction.fetchSentEmail(data))
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }, [dispatch])
   
   useEffect(() => {
@@ -71,6 +92,12 @@ function App() {
         </Route>
         <Route path='/inbox/:eId'>
           <ViewEmail />
+        </Route>
+        <Route path='/sentbox' exact>
+          <SentBox />
+        </Route>
+        <Route path='/sentbox/:eId'>
+          <ViewSentEmail />
         </Route>
       </Switch>
     </Layout>

@@ -1,13 +1,19 @@
 import React from 'react'
-import Inbox from './Inbox'
+import Inbox from './inbox/Inbox'
 import classes from './Home.module.css'
 import { useHistory } from 'react-router-dom'
 
 const Home = () => {
   const history = useHistory()
+
   const clickHandler = (e) => {
     e.preventDefault()
     history.push("/sendemail")
+  }
+
+  const openSentBox = (e) => {
+    e.preventDefault();
+    history.push('/sentbox')
   }
   return (
       <div className={classes.main}>
@@ -18,7 +24,7 @@ const Home = () => {
           <li>Draft</li>
           <li>Stared</li>
           <li>Achived</li>
-          <li>Sent</li>
+          <li onClick={openSentBox}>Sent</li>
         </ul>
       </div>
       <div className={classes.list}>
