@@ -21,7 +21,7 @@ function App() {
   const dispatch = useDispatch();
   const reciveEmail = useSelector(state => state.reciveEmail);
 
-  useEffect(() => {
+  const fetchEmails = () => {
     fetch('https://react-http-b4518-default-rtdb.firebaseio.com/vish26196gmailcom/recive/-N40iIc9HDmZ0gjB8Ual.json')
       .then(res => {
         if (!res.ok) {
@@ -32,12 +32,19 @@ function App() {
       .then(data => {
         dispatch(reciveEmailAction.fetchReciveEmail({
           reciveEmails: data.reciveEmails,
-          seenEmails: data.seenEmails,
-      }))
+          unseenEmails: data.unseenEmails,
+        }))
       })
       .catch(err => {
-      console.log(err)
-    })
+        console.log(err)
+      })
+  }
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetchEmails();
+    }, 5000);
+    return () => clearInterval(interval);
   }, [dispatch])
 
   useEffect(() => {

@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
     reciveEmails: [],
-    seenEmails: 0,
+    unseenEmails: 0,
     changed: false,
 }
 
@@ -11,21 +11,20 @@ const reciveEmailSlice = createSlice({
     initialState,
     reducers: {
         fetchReciveEmail(state, action) {
-            state.seenEmails = action.payload.seenEmails;
+            state.unseenEmails = action.payload.unseenEmails;
             state.reciveEmails = action.payload.reciveEmails;
         },
         readEmail(state, action) {
             const id = action.payload;
             const tempEmail = state.reciveEmails.find(item => item.id === id);
             tempEmail.seen = true;
-            state.seenEmails++;
+            state.unseenEmails--;
             state.changed = true
         },
         deleteEmail(state, action) {
             const id = action.payload;
             const newEmails = state.reciveEmails.filter(item => item.id !== id);
             state.reciveEmails = newEmails;
-            state.seenEmails--;
         }
 
     }
